@@ -14,8 +14,6 @@ public class InputHandler {
         this.block = block;
     }
 
-    // todo
-    // solve non integer input
     public void handleFloorChange() {
         System.out.println("Change floor from 0 to 6: ");
         int destinationFloor = scanner.nextInt();
@@ -61,34 +59,33 @@ public class InputHandler {
 
         }
         else {
-            System.out.println("Can't get into lift it is not here!");
+            System.out.println("Can't get into lift that is not here!");
         }
 
     }
 
     public boolean handleUserAction() {
-        String userAction = " ";
-            System.out.println("What is your action? Change floor (cf), call lift (cl), get into lift (gi), get position (gp), or quit (q)");
-            userAction = scanner.nextLine();
-            switch (userAction) {
-                case "cf":
-                    handleFloorChange();
-                    break;
-                case "cl":
-                    handleUpOrDownDirection();
-                    break;
-                case "gi":
-                    getIntoLift();
-                    break;
-                case "q":
-                    return true;
-                    // todo
-                case "gp":
-                    System.out.println("You are on " + block.activeFloor.level);
-                    break;
-                default:
-                    System.out.println("Invalid operation, please try again");
-            }
+        String userAction;
+        System.out.println("What is your action? Change floor (cf), call lift (cl), get into lift (gi), get position (gp), or quit (q)");
+        userAction = scanner.nextLine();
+        switch (userAction) {
+            case "cf":
+                handleFloorChange();
+                break;
+            case "cl":
+                handleUpOrDownDirection();
+                break;
+            case "gi":
+                getIntoLift();
+                break;
+            case "q":
+                return true;
+            case "gp":
+                System.out.println("You are on " + block.activeFloor.level);
+                break;
+            default:
+                System.out.println("Invalid operation, please try again");
+        }
         return false;
     }
 }

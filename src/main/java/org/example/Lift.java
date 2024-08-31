@@ -8,8 +8,6 @@ public class Lift {
     public boolean down = false;
     StringBuilder template = new StringBuilder("0-1-2-3-4-5-6");
     public Lift(int location) {
-        // todo
-        // check value is correct
         this.location = location;
         template.setCharAt(location * 2, 'x');
     }
@@ -32,6 +30,7 @@ public class Lift {
             while(location > destination) {
                 positionDisplay(location, location - 1);
                 --location;
+                System.out.println(getState());
             }
         }
         else {
@@ -52,4 +51,16 @@ public class Lift {
         return template.toString();
     }
 
+
+    public String getState() {
+        String temp = " ";
+        if(up) {
+            temp = " and is currently going up.";
+        }
+        if(down) {
+            temp = " and is currently going down.";
+        }
+        return "Lift is at " + location + temp;
+
+    }
 }

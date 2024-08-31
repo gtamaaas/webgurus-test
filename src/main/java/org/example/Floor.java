@@ -19,7 +19,6 @@ public class Floor {
         B = b;
     }
 
-    // only calculates distance right now
     public Lift getLiftCloserToFloor() {
         int distanceFromA = Math.abs(A.location - this.level);
         int distanceFromB = Math.abs(B.location - this.level);

@@ -2,13 +2,12 @@ package org.example;
 
 // with 7 storeys (indexed 0-6)
 
-
 import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
-        Lift A = new Lift(2);
+        Lift A = new Lift(0);
         Lift B = new Lift(6);
         ArrayList<Floor> listOfFloors = new ArrayList<>();
 
@@ -18,5 +17,6 @@ public class Main {
 
         }
         Block block = new Block(listOfFloors);
+        block.start();
     }
 }
