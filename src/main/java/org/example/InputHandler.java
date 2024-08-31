@@ -7,10 +7,15 @@ public class InputHandler {
 
     public Scanner scanner;
 
-    public InputHandler() {
+    public Block block;
+
+    public InputHandler(Block block) {
         scanner = new Scanner(System.in);
+        this.block = block;
     }
 
+    // todo
+    // solve non integer input
     public void handleFloorChange() {
         System.out.println("Change floor from 0 to 6: ");
         int destinationFloor = scanner.nextInt();
@@ -18,7 +23,13 @@ public class InputHandler {
             System.out.println("Invalid floor, please choose another");
             destinationFloor = scanner.nextInt();
         }
-        System.out.println("Changed floor to " + destinationFloor);
+        scanner.nextLine();
+        block.setActiveFloor(destinationFloor);
+        System.out.println("You are now on floor " + destinationFloor);
+    }
+
+    public void printFloorInformation() {
+        System.out.println(block.activeFloor);
     }
 
     public String handleUpOrDownDirection() {
@@ -36,5 +47,28 @@ public class InputHandler {
         else
             System.out.println("Going" + destination + "...");
         return destination;
+    }
+
+    public boolean handleUserAction() {
+        String userAction = " ";
+            System.out.println("What is your action? Change floor (cf), call lift (cl), get position (gp), or quit (q)");
+            userAction = scanner.nextLine();
+            switch (userAction) {
+                case "cf":
+                    handleFloorChange();
+                    break;
+                case "cl":
+                    handleUpOrDownDirection();
+                    break;
+                case "q":
+                    return true;
+                    // todo
+                case "gp":
+                    System.out.println("You are on " + block.activeFloor);
+                    break;
+                default:
+                    System.out.println("Invalid operation, please try again");
+            }
+        return false;
     }
 }

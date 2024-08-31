@@ -7,7 +7,7 @@ public class Block {
     public List<Floor> floors;
 
     public Floor activeFloor;
-    public InputHandler inputHandler = new InputHandler();
+    public InputHandler inputHandler = new InputHandler(this);
 
 
 
@@ -19,5 +19,12 @@ public class Block {
 
     public void setActiveFloor(int level) {
         activeFloor = floors.get(level);
+    }
+
+    public void start() {
+        boolean quit = false;
+        while(!quit)
+            quit = inputHandler.handleUserAction();
+        System.out.println("Finished simulation.");
     }
 }
