@@ -20,24 +20,41 @@ public class Floor {
     }
 
     // only calculates distance right now
-    public void callLift() {
+    public Lift getLiftCloserToFloor() {
         int distanceFromA = Math.abs(A.location - this.level);
         int distanceFromB = Math.abs(B.location - this.level);
-        if(distanceFromA < distanceFromB)
+        if(distanceFromA < distanceFromB) {
             System.out.println("Distance from A " + distanceFromA);
-        else if ( distanceFromA > distanceFromB)
+            return A;
+        }
+        else if ( distanceFromA > distanceFromB) {
             System.out.println("Distance from B " + distanceFromB);
-        else if (A.location >= B.location)
+            return B;
+        }
+        else if (A.location >= B.location) {
             System.out.println("Distance from B " + distanceFromB);
-        else
+            return B;
+        }
+        else {
             System.out.println("Distance from A " + distanceFromB);
+            return A;
+        }
 
     }
 
-//    public void liftTransport(int destination) {
-//        inputHandler.handleUpOrDownDirection();
-//        callLift();
-//    }
+    public void calLLift() {
+        if(A.location == level || B.location == level) {
+            System.out.println("Lift is already here");
+        }
+        else {
+            System.out.println("Lift is called from " + level);
+            Lift lift = getLiftCloserToFloor();
+//            System.out.println("Lift arrived from" + lift.location);
+//            lift.location = level;
+            lift.liftTravel(level);
+
+        }
+    }
 
     @Override
     public String toString() {
