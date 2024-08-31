@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff6267b9-ca52-41a1-931d-4cd1ffb79976" name="Changes" comment="logic for lift travel with added directions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Lift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Lift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="ff6267b9-ca52-41a1-931d-4cd1ffb79976" name="Changes" comment="refactor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724775486988</updated>
       <workItem from="1724775488205" duration="4451000" />
-      <workItem from="1725097389442" duration="17783000" />
+      <workItem from="1725097389442" duration="18045000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1725102859869</created>
@@ -89,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725125274208</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor">
+      <created>1725126342084</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725126342084</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +125,7 @@
     <MESSAGE value="initial lift calling features without direction display" />
     <MESSAGE value="Helpers to find lift on floor" />
     <MESSAGE value="logic for lift travel with added directions" />
-    <option name="LAST_COMMIT_MESSAGE" value="logic for lift travel with added directions" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>
