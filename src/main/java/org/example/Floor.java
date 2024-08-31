@@ -42,15 +42,26 @@ public class Floor {
 
     }
 
+
+    public boolean liftIsHere() {
+        return (A.location == level || B.location == level);
+    }
+
+    //called with liftIsHere
+    public Lift chooseLift() {
+        if(A.location == level)
+            return A;
+        if(B.location == level)
+            return B;
+        return null;
+    }
+
     public void calLLift() {
-        if(A.location == level || B.location == level) {
-            System.out.println("Lift is already here");
-        }
+        if(liftIsHere())
+            System.out.println("lift is already here");
         else {
             System.out.println("Lift is called from " + level);
             Lift lift = getLiftCloserToFloor();
-//            System.out.println("Lift arrived from" + lift.location);
-//            lift.location = level;
             lift.liftTravel(level);
 
         }
